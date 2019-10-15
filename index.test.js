@@ -1,7 +1,7 @@
 const weekNum = require('./index.js');
 
 test('that weekNum returns a value', () => {
-  expect(weekNum).toBeNull();
+  expect(weekNum).not.toBeNull();
 });
 
 // new test added
