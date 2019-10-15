@@ -3,10 +3,18 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
 
+  lint:
+    name: Node Code Formatter
     runs-on: ubuntu-latest
+    steps:
+    - name: Node Code Formatter
+      uses: MarvinJWendt/run-node-formatter@1.2.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
